@@ -92,6 +92,18 @@ dd:last-child { margin-bottom: 0; }
 
 .counter { display: flex; align-items: center; gap: .75rem; margin: 0; }
 
+.hint { margin: 0 0 .9rem; color: var(--muted); font-size: .88rem; }
+
+.user { display: flex; align-items: center; gap: .6rem; margin: 0 0 .9rem; }
+
+.user b { display: block; font-size: .95rem; }
+.user small { color: var(--muted); font-size: .82rem; overflow-wrap: anywhere; }
+
+.avatar { border-radius: 50%; flex: none; }
+
+.error { margin: .8rem 0 0; color: var(--bad); font-size: .85rem; min-height: 0; }
+.error:empty { display: none; }
+
 button {
   font: inherit;
   font-weight: 600;
@@ -103,6 +115,9 @@ button {
   cursor: pointer;
 }
 button:hover { background: #17452f; }
+button:disabled { opacity: .6; cursor: progress; }
+button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+button.secondary:hover { background: #e4efe8; }
 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .log { margin-top: 2.5rem; }

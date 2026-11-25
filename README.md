@@ -12,7 +12,7 @@
 | --- | --- |
 | `index.html` | разметка страницы |
 | `style.css` | стили |
-| `app.js` | логика: дата, счётчик кликов, загрузка Firebase SDK и `initializeApp()` |
+| `app.js` | логика: дата, счётчик кликов, `initializeApp()`, вход через Firebase Auth |
 | `firebase-config.js` | конфиг веб-приложения из Firebase Console |
 
 ## Firebase
@@ -41,7 +41,21 @@ python3 -m http.server 8000
 «Подключён» и `projectId = gurianov-hw`, в журнале подключения видны строки
 `Firebase SDK загружен` и `initializeApp() выполнен`.
 
-## Если позже понадобится Authentication / Firestore
+## Authentication
 
-Добавьте домен `alexgurian.github.io` в Firebase Console → Authentication → Settings →
-Authorized domains, иначе вход через OAuth с этого адреса будет отклонён.
+- Провайдер: **Google** (Firebase Console → Authentication → Sign-in method).
+- Код: `signInWithPopup` + `GoogleAuthProvider` в `app.js`, состояние сессии через
+  `onAuthStateChanged`, выход через `signOut`.
+- Authorized domains: `localhost`, `gurianov-hw.firebaseapp.com`, `gurianov-hw.web.app`,
+  `alexgurian.github.io` (без последнего OAuth с домена GitHub Pages отклоняется).
+- Пользователи после входа видны в Firebase Console → Authentication → Users.
+
+## Если позже понадобится вход через GitHub
+
+1. GitHub → Settings → Developer settings → OAuth Apps → New OAuth App.
+   Callback URL: `https://gurianov-hw.firebaseapp.com/__/auth/handler`.
+2. Firebase Console → Authentication → Sign-in method → GitHub: вставить Client ID и
+   Client Secret, сохранить.
+3. В `app.js` добавить `GithubAuthProvider` — структура кода уже готова, меняется
+   только провайдер.
+

@@ -48,7 +48,36 @@
       </article>
 
       <article class="card">
-        <h2>3. JavaScript</h2>
+        <h2>3. Вход через Google</h2>
+        <p class="status" id="auth-status" data-state="wait">Не выполнен</p>
+
+        <div id="auth-guest">
+          <p class="hint">
+            Firebase Authentication, провайдер Google. Откроется окно выбора аккаунта.
+          </p>
+          <button id="signin-btn" type="button">Войти через Google</button>
+        </div>
+
+        <div id="auth-user" hidden>
+          <p class="user">
+            <img id="user-avatar" class="avatar" alt="" width="40" height="40" hidden>
+            <span>
+              <b id="user-name">—</b>
+              <small id="user-email">—</small>
+            </span>
+          </p>
+          <dl>
+            <dt>UID</dt>
+            <dd id="user-uid" class="mono">—</dd>
+          </dl>
+          <button id="signout-btn" type="button" class="secondary">Выйти</button>
+        </div>
+
+        <p class="error" id="auth-error"></p>
+      </article>
+
+      <article class="card">
+        <h2>4. JavaScript</h2>
         <p class="status" data-state="ok">Работает</p>
         <p>Кнопка ниже считает клики и сохраняет их в браузере:</p>
         <p class="counter">
