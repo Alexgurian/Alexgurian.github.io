@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гурьянов Александр — GitHub Pages + Firebase</title>
+  <meta name="description" content="Домашняя работа: статический сайт на GitHub Pages с подключённым Firebase.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <p class="who">Гурьянов Александр<span>9/3-КБ-24/1</span></p>
+    <p class="date" id="today"></p>
+  </header>
+
+  <main>
+    <h1>GitHub Pages и Firebase</h1>
+    <p class="lead">
+      Статический сайт с JS, который открывается по адресу
+      <a href="https://alexgurian.github.io">alexgurian.github.io</a>
+      и при загрузке инициализирует Firebase-приложение из конфига в репозитории.
+    </p>
+
+    <section class="cards">
+      <article class="card">
+        <h2>1. GitHub Pages</h2>
+        <p class="status" id="pages-status" data-state="ok">Работает</p>
+        <dl>
+          <dt>Репозиторий</dt>
+          <dd><a href="https://github.com/Alexgurian/Alexgurian.github.io">Alexgurian.github.io</a></dd>
+          <dt>Адрес сайта</dt>
+          <dd><a href="https://alexgurian.github.io">alexgurian.github.io</a></dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <h2>2. Firebase</h2>
+        <p class="status" id="fb-status" data-state="wait">Проверяю…</p>
+        <dl>
+          <dt>Проект</dt>
+          <dd id="fb-project">—</dd>
+          <dt>App ID</dt>
+          <dd id="fb-appid" class="mono">—</dd>
+          <dt>Auth domain</dt>
+          <dd id="fb-auth" class="mono">—</dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <h2>3. JavaScript</h2>
+        <p class="status" data-state="ok">Работает</p>
+        <p>Кнопка ниже считает клики и сохраняет их в браузере:</p>
+        <p class="counter">
+          <button id="count-btn" type="button">Нажать</button>
+          <span>кликов: <b id="count">0</b></span>
+        </p>
+      </article>
+    </section>
+
+    <section class="log">
+      <h2>Журнал подключения</h2>
+      <pre id="log" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Домашняя работа · <span id="year"></span> · исходники в репозитории на GitHub</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
