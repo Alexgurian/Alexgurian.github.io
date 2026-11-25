@@ -99,7 +99,7 @@ dd:last-child { margin-bottom: 0; }
 .user b { display: block; font-size: .95rem; }
 .user small { color: var(--muted); font-size: .82rem; overflow-wrap: anywhere; }
 
-.avatar { border-radius: 50%; flex: none; }
+.avatar { border-radius: 50%; border: 1px solid var(--line); background: #fff; flex: none; }
 
 .error { margin: .8rem 0 0; color: var(--bad); font-size: .85rem; min-height: 0; }
 .error:empty { display: none; }
